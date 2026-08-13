@@ -29,12 +29,8 @@
 #include <stochtree/log.h>
 #include <stochtree/meta.h>
 
-#include <cmath>
 #include <map>
 #include <numeric>
-#include <random>
-#include <set>
-#include <string>
 #include <vector>
 
 namespace StochTree {
@@ -64,7 +60,7 @@ class SampleCategoryMapper {
 
   inline void SetCategoryId(data_size_t sample_id, int category_id) {
     CHECK_LT(sample_id, num_observations_);
-    observation_indices_[sample_id] = sample_id;
+    observation_indices_[sample_id] = category_id;
   }
   
   inline int NumObservations() {return num_observations_;}
